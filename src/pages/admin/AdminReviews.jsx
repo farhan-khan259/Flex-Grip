@@ -1,0 +1,2 @@
+import { AdminLayout } from '../../components/layout/PageLayouts'
+export default function AdminReviews() { return <AdminLayout title="Reviews." subtitle="Keep player feedback at the centre of FLEX."><section className="admin-panel"><div className="admin-panel__header"><h2>Review queue</h2><button>Filter</button></div><div className="admin-list"><div className="admin-list__row"><b>No reviews to approve.</b><span>FLEX Grip Socks</span><span className="admin-tag">Clear</span><button className="admin-action">Manage</button></div></div></section></AdminLayout> }

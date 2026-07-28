@@ -1,0 +1,2 @@
+import { AdminLayout } from '../../components/layout/PageLayouts'
+export default function AdminProducts() { return <AdminLayout title="Products." subtitle="Your current FLEX product lineup."><section className="admin-panel"><div className="admin-panel__header"><h2>Product catalogue</h2><button>Add product</button></div><div className="admin-list"><div className="admin-list__row"><b>FLEX Grip Socks</b><span>£10 / £25 pack</span><span className="admin-tag">Active</span><button className="admin-action">Edit</button></div></div></section></AdminLayout> }

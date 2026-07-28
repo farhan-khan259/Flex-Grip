@@ -1,0 +1,3 @@
+import { Link } from 'react-router-dom'
+import { AuthShell } from '../../components/layout/PageLayouts'
+export default function ResetPasswordPage() { return <AuthShell eyebrow="Account recovery" title="Choose a new password." intro="Use a strong password you have not used elsewhere." footer={<Link to="/login">← Back to sign in</Link>}><form className="auth-form" onSubmit={(event) => event.preventDefault()}><label>New password<input type="password" placeholder="New password" required /></label><label>Confirm password<input type="password" placeholder="Confirm password" required /></label><button type="submit">Save new password <span>→</span></button></form></AuthShell> }

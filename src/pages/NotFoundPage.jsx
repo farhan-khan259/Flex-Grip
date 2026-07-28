@@ -1,0 +1,2 @@
+import { InfoPage, EmptyState } from '../components/layout/PageLayouts'
+export default function NotFoundPage() { return <InfoPage eyebrow="404" title="This page is off the pitch." intro="The page you’re looking for may have moved, but the next step is still right here."><EmptyState title="Let’s get you back in play" text="Explore FLEX Grip Socks or return to the homepage." action="Back to homepage" to="/" /></InfoPage> }

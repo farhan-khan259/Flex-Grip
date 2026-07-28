@@ -1,0 +1,2 @@
+import { AdminLayout } from '../../components/layout/PageLayouts'
+export default function AdminOrders() { return <AdminLayout title="Orders." subtitle="Track and manage every customer purchase."><section className="admin-panel"><div className="admin-panel__header"><h2>All orders</h2><button>Export</button></div><div className="admin-list"><div className="admin-list__row"><b>Order queue is clear.</b><span>No customer</span><span className="admin-tag">Ready</span><button className="admin-action">View orders</button></div></div></section></AdminLayout> }
