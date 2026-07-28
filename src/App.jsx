@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { CartProvider } from './context/CartContext'
 import { WishlistProvider } from './context/WishlistContext'
 import { AuthProvider } from './context/AuthContext'
+import { AdminAuthProvider, useAdminAuth } from './context/AdminAuthContext'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 
@@ -39,18 +40,28 @@ import AdminProducts from './pages/admin/AdminProducts'
 import AdminCustomers from './pages/admin/AdminCustomers'
 import AdminReviews from './pages/admin/AdminReviews'
 import AdminSettings from './pages/admin/AdminSettings'
+import AdminLogin from './pages/admin/AdminLogin'
+
+function StorefrontLayout() {
+  return <div className="app"><Header /><main className="app-main"><Outlet /></main><Footer /></div>
+}
+
+function AdminGuard() {
+  const { isAdmin } = useAdminAuth()
+  const location = useLocation()
+  return isAdmin ? <Outlet /> : <Navigate to="/admin/login" replace state={{ from: location.pathname }} />
+}
 
 function App() {
   return (
     <AuthProvider>
       <CartProvider>
         <WishlistProvider>
-          <Router>
-            <div className="app">
-              <Header />
-              <main className="app-main">
-                <AnimatePresence mode="wait">
-                  <Routes>
+          <AdminAuthProvider>
+            <Router>
+              <AnimatePresence mode="wait">
+                <Routes>
+                  <Route element={<StorefrontLayout />}>
                     {/* Customer Routes */}
                     <Route path="/" element={<HomePage />} />
                     <Route path="/shop" element={<ShopPage />} />
@@ -82,22 +93,24 @@ function App() {
                     <Route path="/terms" element={<TermsPage />} />
                     <Route path="/cookies" element={<CookiesPage />} />
                     
-                    {/* Admin Routes */}
+                    {/* 404 */}
+                    <Route path="*" element={<NotFoundPage />} />
+                  </Route>
+
+                  {/* Admin Routes use their own shell without the storefront header or footer. */}
+                  <Route path="/admin/login" element={<AdminLogin />} />
+                  <Route element={<AdminGuard />}>
                     <Route path="/admin" element={<AdminDashboard />} />
                     <Route path="/admin/orders" element={<AdminOrders />} />
                     <Route path="/admin/products" element={<AdminProducts />} />
                     <Route path="/admin/customers" element={<AdminCustomers />} />
                     <Route path="/admin/reviews" element={<AdminReviews />} />
                     <Route path="/admin/settings" element={<AdminSettings />} />
-                    
-                    {/* 404 */}
-                    <Route path="*" element={<NotFoundPage />} />
-                  </Routes>
-                </AnimatePresence>
-              </main>
-              <Footer />
-            </div>
-          </Router>
+                  </Route>
+                </Routes>
+              </AnimatePresence>
+            </Router>
+          </AdminAuthProvider>
         </WishlistProvider>
       </CartProvider>
     </AuthProvider>

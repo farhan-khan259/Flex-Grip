@@ -1,3 +1,26 @@
 import { Link } from 'react-router-dom'
 import { AdminLayout } from '../../components/layout/PageLayouts'
-export default function AdminDashboard() { return <AdminLayout title="Good morning." subtitle="Here’s a clear view of how FLEX is moving today."><div className="admin-stats"><article className="admin-stat"><span>Today’s orders</span><strong>0</strong><small>Ready when orders arrive</small></article><article className="admin-stat"><span>Revenue</span><strong>£0.00</strong><small>Current sales total</small></article><article className="admin-stat"><span>Customers</span><strong>0</strong><small>Growth starts here</small></article></div><section className="admin-panel"><div className="admin-panel__header"><h2>Recent orders</h2><Link to="/admin/orders">View all →</Link></div><div className="admin-list"><div className="admin-list__row"><b>No orders to show yet.</b><span>—</span><span>—</span><Link className="admin-action" to="/admin/products">Manage product</Link></div></div></section></AdminLayout> }
+import { products } from '../../data/products'
+
+export default function AdminDashboard() {
+  const startingPrice = Math.min(...products.map((product) => product.price))
+
+  return (
+    <AdminLayout title="Store overview." subtitle="A current view of the FLEX storefront and catalogue.">
+      <div className="admin-stats">
+        <article className="admin-stat"><span>Live products</span><strong>{products.length}</strong><small>Published on the storefront</small></article>
+        <article className="admin-stat"><span>Starting price</span><strong>£{startingPrice}</strong><small>Single-pair price</small></article>
+        <article className="admin-stat"><span>Store status</span><strong className="admin-stat-word">Live</strong><small>Storefront available</small></article>
+      </div>
+      <section className="admin-panel">
+        <div className="admin-panel__header"><div><h2>Catalogue snapshot</h2><p>Products currently visible to customers</p></div><Link to="/admin/products">Manage products →</Link></div>
+        <div className="admin-product-list">
+          {products.map((product) => <div className="admin-product-row" key={product.id}><img src={product.image} alt="" /><div><b>{product.name}</b><small>{product.priceLabel}</small></div><span>{product.sizes.join(' · ')}</span><span className="admin-tag">Live</span></div>)}
+        </div>
+      </section>
+      <section className="admin-panel admin-panel--compact">
+        <div className="admin-panel__header"><div><h2>Orders</h2><p>Orders will appear after checkout storage is connected.</p></div><Link to="/admin/orders">Open orders →</Link></div>
+      </section>
+    </AdminLayout>
+  )
+}

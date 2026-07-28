@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useAdminAuth } from '../../context/AdminAuthContext'
 import './PageLayouts.css'
 
 const reveal = { hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0, transition: { duration: 0.45 } } }
@@ -42,7 +43,8 @@ export function AccountLayout({ title, intro, children }) {
 
 const adminLinks = [['/admin', 'Overview'], ['/admin/orders', 'Orders'], ['/admin/products', 'Products'], ['/admin/customers', 'Customers'], ['/admin/reviews', 'Reviews'], ['/admin/settings', 'Settings']]
 export function AdminLayout({ title, subtitle, children }) {
-  return <main className="admin-page"><div className="admin-layout"><aside className="admin-side"><Link to="/" className="admin-logo"><span>F</span> FLEX <small>ADMIN</small></Link><nav>{adminLinks.map(([to, label]) => <NavLink key={to} to={to} end={to === '/admin'}><i>{label.slice(0, 1)}</i>{label}</NavLink>)}</nav><Link to="/" className="admin-store-link">↗ View storefront</Link></aside><section className="admin-main"><header className="admin-header"><div><p className="ui-eyebrow"><span />Store management</p><h1>{title}</h1><p>{subtitle}</p></div><button className="admin-avatar" aria-label="Admin profile">A</button></header>{children}</section></div></main>
+  const { logout } = useAdminAuth()
+  return <main className="admin-page"><div className="admin-layout"><aside className="admin-side"><Link to="/admin" className="admin-logo"><span>F</span> FLEX <small>ADMIN</small></Link><nav>{adminLinks.map(([to, label]) => <NavLink key={to} to={to} end={to === '/admin'}><i>{label.slice(0, 1)}</i>{label}</NavLink>)}</nav><div className="admin-side-actions"><Link to="/">↗ View storefront</Link><button type="button" onClick={logout}>Sign out →</button></div></aside><section className="admin-main"><header className="admin-header"><div><p className="ui-eyebrow"><span />Store management</p><h1>{title}</h1><p>{subtitle}</p></div><button className="admin-avatar" type="button" aria-label="Admin profile">A</button></header>{children}</section></div></main>
 }
 
 export function EmptyState({ title, text, action = 'Shop FLEX Grip Socks', to = '/shop' }) {

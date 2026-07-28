@@ -1,2 +1,24 @@
 import { AdminLayout } from '../../components/layout/PageLayouts'
-export default function AdminSettings() { return <AdminLayout title="Settings." subtitle="Keep your storefront and team preferences in one place."><div className="admin-stats"><article className="admin-stat"><span>Store status</span><strong>Live</strong><small>FLEX storefront is active</small></article><article className="admin-stat"><span>Currency</span><strong>GBP</strong><small>£ British Pound</small></article><article className="admin-stat"><span>Product count</span><strong>1</strong><small>FLEX Grip Socks</small></article></div><section className="admin-panel"><div className="admin-panel__header"><h2>Store preferences</h2><button className="admin-action">Save changes</button></div><div className="admin-list"><div className="admin-list__row"><b>Store notifications</b><span>Enabled</span><span className="admin-tag">On</span><button className="admin-action">Edit</button></div></div></section></AdminLayout> }
+import { products } from '../../data/products'
+
+export default function AdminSettings() {
+  return (
+    <AdminLayout title="Settings." subtitle="Current storefront, support and catalogue configuration.">
+      <div className="admin-stats">
+        <article className="admin-stat"><span>Store status</span><strong className="admin-stat-word">Live</strong><small>FLEX storefront is active</small></article>
+        <article className="admin-stat"><span>Currency</span><strong>GBP</strong><small>British pound sterling</small></article>
+        <article className="admin-stat"><span>Products</span><strong>{products.length}</strong><small>Active catalogue listings</small></article>
+      </div>
+      <section className="admin-panel">
+        <div className="admin-panel__header"><div><h2>Store details</h2><p>Public-facing business and support information</p></div><span className="admin-tag">Current</span></div>
+        <dl className="admin-settings-list">
+          <div><dt>Store name</dt><dd>FLEX Grip Socks</dd></div>
+          <div><dt>Support email</dt><dd><a href="mailto:shabynazir07@gmail.com">shabynazir07@gmail.com</a></dd></div>
+          <div><dt>Support phone</dt><dd><a href="tel:+447449976827">+44 74499 76827</a></dd></div>
+          <div><dt>Shipping</dt><dd>Free delivery</dd></div>
+          <div><dt>Available sizes</dt><dd>M, L</dd></div>
+        </dl>
+      </section>
+    </AdminLayout>
+  )
+}
