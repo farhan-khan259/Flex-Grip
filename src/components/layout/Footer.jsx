@@ -15,6 +15,10 @@ export default function Footer() {
                 <span className="footer-logo">FLEX Grip</span>
                 <p>Premium athletic socks engineered for performance and comfort.</p>
               </div>
+              <address className="footer-contact">
+                <a href="mailto:shabynazir07@gmail.com"><span aria-hidden="true">@</span><span>shabynazir07@gmail.com</span></a>
+                <a href="tel:+447449976827"><span aria-hidden="true">↗</span><span>+44 74499 76827</span></a>
+              </address>
               <div className="footer-socials">
                 <a href="#" className="social-link" title="Facebook">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
