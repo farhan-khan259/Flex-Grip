@@ -1,11 +1,15 @@
 import threePairImage from '../images/3pair.png'
 
+export const DELIVERY_CHARGE = 3.99
+export const DELIVERY_ESTIMATE = '3–5 business days'
+
 export const products = [
   {
     id: 1,
     name: 'FLEX Grip Socks',
     price: 10,
     priceLabel: '£10 per pair',
+    checkoutUrl: 'https://buy.stripe.com/28EbJ0dNR6gm74g3wv67S00',
     offers: [{ id: 'single', label: '1 pair', price: 10 }],
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1F883272-DD6A-47C3-B64E-660869CF5308-sdf5hyQPM8pNQCJFnjauTKwgkJ9bnM.jpeg',
     category: 'grip-socks',
@@ -20,6 +24,7 @@ export const products = [
     name: 'FLEX Grip Socks — 3 Pair Pack',
     price: 25,
     priceLabel: '3 pairs for £25',
+    checkoutUrl: 'https://buy.stripe.com/bJe00idNR8ouewI2sr67S01',
     offers: [{ id: 'three-pack', label: '3 pairs', price: 25 }],
     image: threePairImage,
     category: 'grip-socks',

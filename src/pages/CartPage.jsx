@@ -1,12 +1,19 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useCart } from '../context/CartContext'
+import { DELIVERY_CHARGE, DELIVERY_ESTIMATE, products } from '../data/products'
 import './CartPage.css'
 
 const fallbackProductImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1F883272-DD6A-47C3-B64E-660869CF5308-sdf5hyQPM8pNQCJFnjauTKwgkJ9bnM.jpeg'
 
 export default function CartPage() {
-  const { cartItems, removeFromCart, updateCartItem, getCartTotal, clearCart } = useCart()
+  const { cartItems, removeFromCart, getCartTotal, clearCart } = useCart()
+  const checkoutOptions = [...new Map(cartItems.map((item) => {
+    const product = products.find((entry) => entry.id === item.id)
+    return product ? [product.id, product] : null
+  }).filter(Boolean)).values()]
+  const deliveryTotal = DELIVERY_CHARGE * checkoutOptions.length
+  const orderTotal = getCartTotal() + deliveryTotal
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -62,12 +69,7 @@ export default function CartPage() {
                   <p>{item.offer?.label && `${item.offer.label} | `}{item.size && `Size: ${item.size}`} {item.color && `| Color: ${item.color}`}</p>
                   <p className="item-price">£{item.price.toFixed(2)}</p>
                 </div>
-                <div className="item-quantity">
-                  <button onClick={() => updateCartItem(item.id, Math.max(1, item.quantity - 1), item.size, item.color, item.offer?.id)}>−</button>
-                  <input type="number" value={item.quantity} readOnly />
-                  <button onClick={() => updateCartItem(item.id, item.quantity + 1, item.size, item.color, item.offer?.id)}>+</button>
-                </div>
-                <p className="item-total">£{(item.price * item.quantity).toFixed(2)}</p>
+                <p className="item-total">£{item.price.toFixed(2)}</p>
                 <button
                   onClick={() => removeFromCart(item.id, item.size, item.color, item.offer?.id)}
                   className="btn-remove"
@@ -91,21 +93,18 @@ export default function CartPage() {
               <span>£{getCartTotal().toFixed(2)}</span>
             </div>
             <div className="summary-row">
-              <span>Shipping:</span>
-              <span>FREE</span>
-            </div>
-            <div className="summary-row">
-              <span>Tax:</span>
-              <span>£0.00</span>
+              <span>{checkoutOptions.length > 1 ? 'Delivery (2 checkouts):' : 'Delivery:'}</span>
+              <span>£{deliveryTotal.toFixed(2)}</span>
             </div>
             <div className="summary-total">
-              <span>Total:</span>
-              <span>£{getCartTotal().toFixed(2)}</span>
+              <span>Estimated total:</span>
+              <span>£{orderTotal.toFixed(2)}</span>
             </div>
-            <Link to="/checkout" className="btn btn-primary full-width checkout-button">
-              <span>Proceed to Checkout</span>
-              <span aria-hidden="true">→</span>
-            </Link>
+            <p className="cart-delivery-estimate"><span aria-hidden="true">✓</span> Delivery in {DELIVERY_ESTIMATE}</p>
+            {checkoutOptions.length > 1 && <p className="cart-checkout-help">Each pack uses its own secure checkout. Complete each option separately.</p>}
+            <div className="cart-checkout-options">
+              {checkoutOptions.map((product) => <a key={product.id} href={product.checkoutUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary full-width checkout-button"><span>{checkoutOptions.length > 1 ? `Checkout ${product.id === 1 ? '1 pair' : '3 pairs'}` : 'Secure Stripe checkout'}</span><span aria-hidden="true">↗</span></a>)}
+            </div>
             <button onClick={clearCart} className="btn btn-outline full-width">
               Clear Cart
             </button>

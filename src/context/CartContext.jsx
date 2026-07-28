@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     const savedCart = localStorage.getItem('cart')
     if (savedCart) {
-      setCartItems(JSON.parse(savedCart))
+      setCartItems(JSON.parse(savedCart).map((item) => ({ ...item, quantity: 1 })))
     }
   }, [])
 
@@ -25,14 +25,10 @@ export const CartProvider = ({ children }) => {
       )
 
       if (existingItem) {
-        return prevItems.map(item =>
-          item.id === product.id && item.size === size && item.color === color && item.offer?.id === product.offer?.id
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
-        )
+        return prevItems
       }
 
-      return [...prevItems, { ...product, quantity, size, color }]
+      return [...prevItems, { ...product, quantity: 1, size, color }]
     })
   }
 
@@ -64,11 +60,11 @@ export const CartProvider = ({ children }) => {
   }
 
   const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
+    return cartItems.reduce((total, item) => total + item.price, 0)
   }
 
   const getCartItemCount = () => {
-    return cartItems.reduce((count, item) => count + item.quantity, 0)
+    return cartItems.length
   }
 
   return (

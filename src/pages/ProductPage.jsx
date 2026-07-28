@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
-import { products } from "../data/products";
+import { DELIVERY_CHARGE, DELIVERY_ESTIMATE, products } from "../data/products";
 import "./ProductPage.css";
 
 export default function ProductPage() {
@@ -23,7 +23,6 @@ export default function ProductPage() {
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1F883272-DD6A-47C3-B64E-660869CF5308-sdf5hyQPM8pNQCJFnjauTKwgkJ9bnM.jpeg",
   };
-  const [quantity, setQuantity] = useState(1);
   const [selectedOfferId, setSelectedOfferId] = useState(product.offers[0].id);
   const [selectedSize, setSelectedSize] = useState("M");
   const [selectedColor, setSelectedColor] = useState("white");
@@ -42,7 +41,7 @@ export default function ProductPage() {
   const handleAddToCart = () => {
     addToCart(
       { ...product, price: selectedOffer.price, offer: selectedOffer },
-      quantity,
+      1,
       selectedSize,
       selectedColor,
     );
@@ -160,25 +159,6 @@ export default function ProductPage() {
                 </div>
               </div>
 
-              {/* Quantity */}
-              <div className="option-group">
-                <label>Pack quantity:</label>
-                <div className="quantity-control">
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  >
-                    −
-                  </button>
-                  <input
-                    type="number"
-                    value={quantity}
-                    onChange={(e) =>
-                      setQuantity(Math.max(1, parseInt(e.target.value) || 1))
-                    }
-                  />
-                  <button onClick={() => setQuantity(quantity + 1)}>+</button>
-                </div>
-              </div>
             </div>
 
             {/* Actions */}
@@ -186,6 +166,9 @@ export default function ProductPage() {
               <button className="btn btn-add-to-cart" onClick={handleAddToCart}>
                 Add to Cart
               </button>
+              <a className="btn btn-buy-now" href={product.checkoutUrl} target="_blank" rel="noopener noreferrer">
+                Buy now securely ↗
+              </a>
               <button
                 className="btn btn-wishlist"
                 onClick={() => toggleWishlist(product)}
@@ -193,6 +176,11 @@ export default function ProductPage() {
               >
                 ♡
               </button>
+            </div>
+
+            <div className="product-delivery-note">
+              <span aria-hidden="true">✓</span>
+              <p><strong>£{DELIVERY_CHARGE.toFixed(2)} delivery charges</strong><small>Estimated in {DELIVERY_ESTIMATE}</small></p>
             </div>
 
             {/* Features */}

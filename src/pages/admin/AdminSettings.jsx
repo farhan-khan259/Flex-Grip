@@ -15,7 +15,8 @@ export default function AdminSettings() {
           <div><dt>Store name</dt><dd>FLEX Grip Socks</dd></div>
           <div><dt>Support email</dt><dd><a href="mailto:shabynazir07@gmail.com">shabynazir07@gmail.com</a></dd></div>
           <div><dt>Support phone</dt><dd><a href="tel:+447449976827">+44 74499 76827</a></dd></div>
-          <div><dt>Shipping</dt><dd>Free delivery</dd></div>
+          <div><dt>Delivery charge</dt><dd>£3.99</dd></div>
+          <div><dt>Delivery estimate</dt><dd>3–5 business days</dd></div>
           <div><dt>Available sizes</dt><dd>M, L</dd></div>
         </dl>
       </section>

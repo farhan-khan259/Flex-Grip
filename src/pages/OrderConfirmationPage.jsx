@@ -1,2 +1,0 @@
-import { InfoPage, EmptyState } from '../components/layout/PageLayouts'
-export default function OrderConfirmationPage() { return <InfoPage eyebrow="Order confirmed" title="You’re ready for the next step." intro="Thanks for choosing FLEX. Your order #12345 is confirmed and a receipt is on its way to your inbox."><EmptyState title="Order received" text="We’ll keep you updated as your FLEX Grip Socks move from our team to you." /></InfoPage> }
