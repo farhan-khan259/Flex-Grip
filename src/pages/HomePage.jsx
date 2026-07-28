@@ -33,6 +33,24 @@ const galleryImages = [
   { image: onPitch, alt: 'Football player on the field', label: 'Made to perform' },
 ]
 
+const playerReviews = [
+  {
+    name: 'Quevin Castro',
+    role: 'Professional football player',
+    quote: 'Top quality socks. Not once had a problem with blisters or sore feet since using!'
+  },
+  {
+    name: 'Jesse Sene-Lefao',
+    role: 'Professional rugby player',
+    quote: 'Best socks on the market! Got recommended by a friend and now my whole rugby team use them. Super comfortable.'
+  },
+  {
+    name: 'Joe Dixon',
+    role: 'England national football player',
+    quote: 'These socks travel around the world with me! I’ve tried many different brands, but FLEX is the best by a country mile.'
+  },
+]
+
 const reveal = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' } },
@@ -104,13 +122,14 @@ export default function HomePage() {
             <p className="eyebrow"><span /> Designed for the work</p>
             <h2>Small details.<br /><em>Big difference.</em></h2>
           </motion.div>
-          <motion.p variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="section-intro">A dependable fit and confident feel, from your first warm-up to the final whistle.</motion.p>
+          <motion.p variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="section-intro">Every detail is built to support a secure, comfortable feel from your first warm-up to the final whistle.</motion.p>
         </div>
         <div className="landing-shell feature-grid">
           {[
-            ['01', 'Stay planted', 'Grip-focused construction helps reduce movement inside your boot.'],
-            ['02', 'Feel fresh', 'Breathable fabric supports all-day training and match comfort.'],
-            ['03', 'Go again', 'A cushioned, supportive feel made for repeat performance.'],
+            ['01', 'Compressive fabric', 'Targeted compression through the upper and lower sock creates a snug fit while supporting circulation and ankle stability.'],
+            ['02', 'Thickened sole', 'Extra cushioning underfoot improves comfort and softness, helping reduce strain during long-distance running and training.'],
+            ['03', 'Breathable material', 'Breathable knit across the front of the sock helps reduce sweat, keeping every step cooler and more comfortable.'],
+            ['04', 'Rubber pads', 'Grippy rubber pads reduce movement inside your footwear to help prevent blisters, improve stability, and lower injury risk.'],
           ].map(([number, title, description]) => (
             <motion.article key={number} className="feature-card" variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} whileHover={{ y: -6 }}>
               <span>{number}</span><h3>{title}</h3><p>{description}</p><i>↗</i>
@@ -153,6 +172,39 @@ export default function HomePage() {
             <p>FLEX GRIP SOCKS <b>—</b> MADE FOR MOVEMENT</p>
           </motion.div>
           <motion.img src={onPitch} alt="FLEX athlete on the pitch" initial={{ opacity: 0, x: 25 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} />
+        </div>
+      </section>
+
+      <section className="reviews-section">
+        <div className="landing-shell reviews-heading">
+          <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <p className="eyebrow eyebrow--dark"><span /> Player reviews</p>
+            <h2>Trusted by those<br />who <em>perform.</em></h2>
+          </motion.div>
+          <motion.p variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            Built for the demands of training, match day, and every journey in between.
+          </motion.p>
+        </div>
+        <div className="landing-shell reviews-grid">
+          {playerReviews.map((review, index) => (
+            <motion.article
+              key={review.name}
+              className="review-card"
+              variants={reveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: index * 0.08 }}
+              whileHover={{ y: -6 }}
+            >
+              <div className="review-card__top"><span>★★★★★</span><b>0{index + 1}</b></div>
+              <blockquote>“{review.quote}”</blockquote>
+              <footer>
+                <strong>{review.name}</strong>
+                <small>{review.role}</small>
+              </footer>
+            </motion.article>
+          ))}
         </div>
       </section>
 
