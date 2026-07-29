@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Outlet, Route, Routes } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { CartProvider } from './context/CartContext'
 import { WishlistProvider } from './context/WishlistContext'
 import { AuthProvider } from './context/AuthContext'
-import { AdminAuthProvider, useAdminAuth } from './context/AdminAuthContext'
+import { AdminAuthProvider } from './context/AdminAuthContext'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 
@@ -31,24 +31,28 @@ import TermsPage from './pages/TermsPage'
 import CookiesPage from './pages/CookiesPage'
 import NotFoundPage from './pages/NotFoundPage'
 
-// Admin Pages
-import AdminDashboard from './pages/admin/AdminDashboard'
-import AdminOrders from './pages/admin/AdminOrders'
-import AdminProducts from './pages/admin/AdminProducts'
-import AdminCustomers from './pages/admin/AdminCustomers'
-import AdminReviews from './pages/admin/AdminReviews'
-import AdminSettings from './pages/admin/AdminSettings'
-import AdminLogin from './pages/admin/AdminLogin'
+// Admin panel temporarily disabled. Uncomment these imports when restoring it.
+// import { Navigate, useLocation } from 'react-router-dom'
+// import { useAdminAuth } from './context/AdminAuthContext'
+// import AdminDashboard from './pages/admin/AdminDashboard'
+// import AdminOrders from './pages/admin/AdminOrders'
+// import AdminProducts from './pages/admin/AdminProducts'
+// import AdminCustomers from './pages/admin/AdminCustomers'
+// import AdminReviews from './pages/admin/AdminReviews'
+// import AdminSettings from './pages/admin/AdminSettings'
+// import AdminLogin from './pages/admin/AdminLogin'
 
 function StorefrontLayout() {
   return <div className="app"><Header /><main className="app-main"><Outlet /></main><Footer /></div>
 }
 
+/* Admin panel temporarily disabled.
 function AdminGuard() {
   const { isAdmin } = useAdminAuth()
   const location = useLocation()
   return isAdmin ? <Outlet /> : <Navigate to="/admin/login" replace state={{ from: location.pathname }} />
 }
+*/
 
 function App() {
   return (
@@ -92,8 +96,7 @@ function App() {
                     {/* 404 */}
                     <Route path="*" element={<NotFoundPage />} />
                   </Route>
-
-                  {/* Admin Routes use their own shell without the storefront header or footer. */}
+                  {/* Admin panel temporarily disabled.
                   <Route path="/admin/login" element={<AdminLogin />} />
                   <Route element={<AdminGuard />}>
                     <Route path="/admin" element={<AdminDashboard />} />
@@ -103,6 +106,7 @@ function App() {
                     <Route path="/admin/reviews" element={<AdminReviews />} />
                     <Route path="/admin/settings" element={<AdminSettings />} />
                   </Route>
+                  */}
                 </Routes>
               </AnimatePresence>
             </Router>

@@ -9,8 +9,7 @@ export default function ContactPage() {
           <h2>How can we help?</h2>
           <p>Our support team is ready to help with product and order enquiries.</p>
           <address>
-            <a href="mailto:shabynazir07@gmail.com"><span className="ui-contact-icon" aria-hidden="true">@</span><span><small>Email us</small><strong>shabynazir07@gmail.com</strong></span></a>
-            <a href="tel:+447449976827"><span className="ui-contact-icon" aria-hidden="true">↗</span><span><small>Call us</small><strong>+44 74499 76827</strong></span></a>
+            <a href="mailto:Info@flexofficial.co.uk"><span className="ui-contact-icon" aria-hidden="true">@</span><span><small>Email us</small><strong>Info@flexofficial.co.uk</strong></span></a>
           </address>
         </aside>
         <form className="ui-form ui-contact-form" onSubmit={(event) => event.preventDefault()}>
