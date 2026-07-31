@@ -68,7 +68,7 @@ export default function HomePage() {
             variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
           >
             <motion.p variants={reveal} className="eyebrow"><span /> Performance grip socks</motion.p>
-            <motion.h1 variants={reveal}>Own every<br /><em>step.</em></motion.h1>
+            <motion.h1 variants={reveal}>Flex your <br /><em>performance.</em></motion.h1>
             <motion.p variants={reveal} className="hero-text">
               The performance layer between you and your boots. FLEX Grip Socks are made to help you feel stable, comfortable, and ready for the next move.
             </motion.p>
