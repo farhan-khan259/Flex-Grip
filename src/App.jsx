@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Outlet, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { CartProvider } from './context/CartContext'
 import { WishlistProvider } from './context/WishlistContext'
 import { AuthProvider } from './context/AuthContext'
 import { AdminAuthProvider } from './context/AdminAuthContext'
+import { useAuth } from './context/AuthContext'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 
@@ -32,7 +33,6 @@ import CookiesPage from './pages/CookiesPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 // Admin panel temporarily disabled. Uncomment these imports when restoring it.
-// import { Navigate, useLocation } from 'react-router-dom'
 // import { useAdminAuth } from './context/AdminAuthContext'
 // import AdminDashboard from './pages/admin/AdminDashboard'
 // import AdminOrders from './pages/admin/AdminOrders'
@@ -44,6 +44,13 @@ import NotFoundPage from './pages/NotFoundPage'
 
 function StorefrontLayout() {
   return <div className="app"><Header /><main className="app-main"><Outlet /></main><Footer /></div>
+}
+
+function AccountGuard() {
+  const { isAuthenticated, isLoading } = useAuth()
+  const location = useLocation()
+  if (isLoading) return <main className="route-loading" aria-live="polite">Loading…</main>
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace state={{ from: location.pathname }} />
 }
 
 /* Admin panel temporarily disabled.
@@ -78,10 +85,12 @@ function App() {
                     <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
                     
                     {/* Account Routes */}
-                    <Route path="/account" element={<AccountPage />} />
-                    <Route path="/account/profile" element={<ProfilePage />} />
-                    <Route path="/account/orders" element={<OrdersPage />} />
-                    <Route path="/account/addresses" element={<AddressesPage />} />
+                    <Route element={<AccountGuard />}>
+                      <Route path="/account" element={<AccountPage />} />
+                      <Route path="/account/profile" element={<ProfilePage />} />
+                      <Route path="/account/orders" element={<OrdersPage />} />
+                      <Route path="/account/addresses" element={<AddressesPage />} />
+                    </Route>
                     
                     {/* Info Routes */}
                     <Route path="/about" element={<AboutPage />} />

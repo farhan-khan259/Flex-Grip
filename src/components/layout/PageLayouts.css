@@ -13,3 +13,31 @@
 @media (max-width: 1050px) { .admin-product-row--detailed { grid-template-columns: 52px 1fr auto auto auto; }.admin-product-row--detailed .admin-product-meta:nth-of-type(3) { display: none; }.admin-product-row--detailed img { width: 52px; height: 52px; } }
 @media (max-width: 800px) { .admin-side-actions { display: flex; margin: 15px 0 0; padding: 14px 10px 0; border-top: 1px solid #314035; }.admin-side-actions button { margin-left: auto; }.admin-product-row--detailed { grid-template-columns: 48px 1fr auto; }.admin-product-row--detailed .admin-product-meta, .admin-product-row--detailed .admin-tag { display: none; } }
 @media (max-width: 560px) { .admin-panel { padding: 19px; }.admin-panel__header { align-items: flex-start; }.admin-panel__header > div p { display: none; }.admin-product-row { grid-template-columns: 46px 1fr auto; gap: 11px; }.admin-product-row img { width: 46px; height: 46px; }.admin-product-row > span:not(.admin-tag), .admin-product-row .admin-rating { display: none; }.admin-product-row--detailed { grid-template-columns: 46px 1fr; }.admin-product-row--detailed .admin-action { display: none; }.admin-settings-list > div { grid-template-columns: 1fr; gap: 5px; }.admin-summary-strip { justify-content: space-between; gap: 9px; }.admin-summary-strip span { display: grid; gap: 1px; } }
+
+.form-message { margin: 0; padding: 11px 13px; border: 1px solid; font-size: .78rem; line-height: 1.45; }
+.form-message--error { color: #8f2020; background: #fff0f0; border-color: #efbcbc; }
+.form-message--success { color: #056e9e; background: #e1f6fd; border-color: #a9dff3; }
+
+/* FLEX blue brand accents */
+.auth-page__visual::after { border-color: rgba(8,169,232,.55); }
+.auth-page__visual h1 em,
+.account-brand:hover,
+.account-nav nav a:hover,
+.account-nav nav a.active,
+.account-help b,
+.account-stat strong,
+.admin-logo:hover,
+.admin-side nav a:hover,
+.admin-side nav a.active,
+.admin-store-link:hover,
+.ui-contact-kicker { color: #08a9e8 !important; }
+.account-brand > span,
+.admin-logo span,
+.ui-contact-icon { background: #08a9e8; }
+.auth-form input:focus,
+.ui-form input:focus,
+.ui-form textarea:focus { border-color: #08a9e8; box-shadow: 0 0 0 3px rgba(8,169,232,.14); }
+.auth-form button:hover,
+.ui-contact-details address a:hover { background-color: #08a9e8; border-color: #08a9e8; }
+.auth-form button:disabled, .ui-form button:disabled { opacity: .65; cursor: wait; }
+.route-loading { min-height: 55vh; display: grid; place-items: center; color: #687168; background: #edf1eb; font-weight: 800; }

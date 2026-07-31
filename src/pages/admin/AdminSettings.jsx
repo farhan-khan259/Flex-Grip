@@ -13,7 +13,7 @@ export default function AdminSettings() {
         <div className="admin-panel__header"><div><h2>Store details</h2><p>Public-facing business and support information</p></div><span className="admin-tag">Current</span></div>
         <dl className="admin-settings-list">
           <div><dt>Store name</dt><dd>FLEX Grip Socks</dd></div>
-          <div><dt>Support email</dt><dd><a href="mailto:Info@flexofficial.co.uk">Info@flexofficial.co.uk</a></dd></div>
+          <div><dt>Support email</dt><dd><a href="mailto:flexofficial26@gmail.com">flexofficial26@gmail.com</a></dd></div>
           <div><dt>Delivery charge</dt><dd>£3.99</dd></div>
           <div><dt>Delivery estimate</dt><dd>3–5 business days</dd></div>
           <div><dt>Available sizes</dt><dd>M, L</dd></div>

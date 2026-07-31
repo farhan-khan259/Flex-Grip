@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
 import { useAuth } from "../../context/AuthContext";
-import flexLogo from "../../images/IMG_8912.jpeg";
+import flexLogo from "../../images/logowithblue.jpeg";
 import "./Header.css";
 
 export default function Header() {

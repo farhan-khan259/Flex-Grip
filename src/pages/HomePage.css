@@ -213,3 +213,42 @@
     margin: 28px 0;
   }
 }
+
+/* FLEX blue home-page theme */
+.home-page,
+.landing-hero,
+.performance-section,
+.quote-section,
+.landing-cta { background: #07131a; }
+.offer-section,
+.gallery-section,
+.reviews-section { background: #eef6fb; color: #101820; }
+.eyebrow span,
+.landing-button--accent,
+.ticker,
+.performance-section .feature-card::before { background: #08a9e8; }
+.hero-copy h1 em,
+.offer-content h2 em,
+.section-heading h2 em,
+.gallery-heading h2 em,
+.landing-cta h2 em,
+.text-link span,
+.hero-proof div:last-child strong,
+.hero-stamp,
+.image-caption,
+.offer-card--highlight b,
+.feature-card span,
+.quote-mark,
+.quote-section p b,
+.reviews-heading h2 em,
+.review-card__top { color: #08a9e8; }
+.hero-stamp { border-color: #08a9e8; }
+.landing-button--accent:hover { background: #65c9ee; }
+.feature-grid { background: #294b5d; border-color: #294b5d; }
+.feature-card,
+.performance-section .feature-card:hover,
+.offer-card--highlight { background: #0d202b; }
+.reviews-heading > p { color: #597384; }
+.review-card { background: #fff; border-color: #d1e2ec; box-shadow: 0 10px 24px rgba(9, 59, 82, .08); }
+.review-card:hover { border-color: #79cdec; box-shadow: 0 18px 34px rgba(9, 59, 82, .14); }
+.review-card footer { border-color: #d9e7ee; }

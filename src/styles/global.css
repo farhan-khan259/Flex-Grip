@@ -16,13 +16,13 @@
   --color-gray-800: #262626;
   --color-gray-900: #1a1a1a;
   
-  /* Accent - Emerald Green */
-  --color-accent: #10b981;
-  --color-accent-light: #d1fae5;
-  --color-accent-dark: #047857;
+  /* Accent - FLEX blue */
+  --color-accent: #08a9e8;
+  --color-accent-light: #dff4fd;
+  --color-accent-dark: #0576ad;
   
   /* Status Colors */
-  --color-success: #10b981;
+  --color-success: #08a9e8;
   --color-error: #ef4444;
   --color-warning: #f59e0b;
   --color-info: #3b82f6;
@@ -261,3 +261,157 @@ input, textarea, select {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* FLEX blue palette overrides */
+.landing-button--accent,
+.ticker,
+.cart-summary .btn-primary,
+.btn-buy-now,
+.ui-button,
+.newsletter-form button { background-color: #08a9e8 !important; }
+
+.landing-button--accent:hover,
+.btn-buy-now:hover,
+.cart-summary .btn-primary:hover,
+.ui-button:hover,
+.newsletter-form button:hover { background-color: #65c9ee !important; }
+
+.eyebrow span,
+.hero-copy h1 em,
+.offer-content h2 em,
+.section-heading h2 em,
+.gallery-heading h2 em,
+.landing-cta h2 em,
+.text-link span,
+.hero-proof div:last-child strong,
+.hero-stamp,
+.image-caption,
+.offer-card--highlight b,
+.feature-card span,
+.quote-mark,
+.quote-section p b,
+.product-price,
+.product-rating .stars,
+.auth-card__footer a { color: #08a9e8 !important; }
+
+.eyebrow span,
+.hero-stamp { border-color: #08a9e8 !important; }
+
+.thumbnail.active,
+.pack-btn.active,
+.size-btn:hover,
+.pack-btn:hover { border-color: #08a9e8 !important; }
+
+/* Blue surfaces replace the legacy green page palette. */
+.shop-page,
+.product-page,
+.cart-page,
+.wishlist-page,
+.ui-page,
+.auth-page,
+.admin-page { background: #f3f8fc !important; color: #101820 !important; }
+
+.offer-section,
+.gallery-section,
+.about-intro,
+.about-market { background: #eef6fb !important; color: #101820 !important; }
+
+.product-card,
+.cart-item,
+.wishlist-item,
+.account-panel,
+.account-table,
+.admin-stat,
+.admin-panel,
+.ui-info-card,
+.ui-empty,
+.ui-contact-form,
+.account-form { background: #ffffff !important; border-color: #d3e2ec !important; }
+
+.main-image,
+.product-image,
+.cart-item img,
+.wishlist-item img,
+.admin-product-row img { background: #e5f1f8 !important; }
+
+.header-top,
+.account-nav,
+.admin-side,
+.cart-summary,
+.ui-contact-details,
+.quote-section,
+.offer-card--highlight { background: #081820 !important; }
+
+.header,
+.landing-hero,
+.performance-section,
+.landing-cta { background: #050d14 !important; }
+
+.header,
+.header-top { border-color: #1b3442 !important; }
+
+.header-info p,
+.header-links a,
+.logout-btn,
+.user-name,
+.nav-links a,
+.footer-brand p,
+.footer-section p,
+.footer-links a,
+.footer-contact a,
+.summary-row,
+.cart-delivery-estimate,
+.ui-contact-details > p:not(.ui-contact-kicker) { color: #b7cbd8 !important; }
+
+.header-links a:hover,
+.logout-btn:hover,
+.footer-links a:hover,
+.footer-contact a:hover,
+.footer-legal a:hover,
+.social-link:hover,
+.nav-links a.active,
+.nav-links a:hover { color: #08a9e8 !important; }
+
+.nav-links a::after,
+.social-link:hover,
+.footer-contact a > span:first-child { background-color: #08a9e8 !important; border-color: #08a9e8 !important; }
+
+.product-rating .stars,
+.stars,
+.item-details .item-price,
+.wishlist-item p,
+.empty-cart::before,
+.ui-info-card > span,
+.ui-info-card a,
+.ui-info-card a b,
+.auth-forgot,
+.account-panel a,
+.account-table__row span:last-child,
+.admin-stat small,
+.admin-panel a,
+.admin-panel button,
+.admin-rating,
+.admin-settings-list a,
+.admin-empty-state > span,
+.admin-customer-row > span:first-child { color: #087eaf !important; }
+
+.empty-cart::before,
+.ui-info-card > span,
+.admin-avatar,
+.admin-tag,
+.admin-empty-state > span,
+.admin-customer-row > span:first-child { background: #e1f4fc !important; }
+
+.product-delivery-note { color: #15526e !important; background: #e5f5fc !important; border-color: #b9e1f2 !important; }
+.product-delivery-note > span { background: #087eaf !important; }
+.product-delivery-note small { color: #4e7182 !important; }
+
+.size-btn.active,
+.btn-add-to-cart,
+.btn-small,
+.wishlist-item .btn-small { background: #0b1f2a !important; border-color: #0b1f2a !important; }
+.btn-add-to-cart:hover,
+.btn-small:hover,
+.wishlist-item .btn-small:hover { background: #08a9e8 !important; color: #07131a !important; }
+
+.ui-page__halo { background: radial-gradient(circle, rgba(8,169,232,.18), transparent 68%) !important; }
