@@ -1,4 +1,7 @@
-const API_ORIGIN = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
+// Local development uses Vite's `/api` proxy. Production requests go directly
+// to the Render API unless a deployment supplies a different API URL.
+const defaultApiOrigin = import.meta.env.PROD ? 'https://flex-backend-upxa.onrender.com' : ''
+const API_ORIGIN = (import.meta.env.VITE_API_URL || defaultApiOrigin).replace(/\/$/, '')
 
 export async function apiRequest(path, options = {}) {
   const response = await fetch(`${API_ORIGIN}/api${path}`, {
