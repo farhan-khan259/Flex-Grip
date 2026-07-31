@@ -77,8 +77,8 @@ export default function HomePage() {
               <a href="#story" className="text-link">Explore the difference <span>↓</span></a>
             </motion.div>
             <motion.div variants={reveal} className="hero-proof">
-              <div><strong>£10</strong><span>per pair</span></div>
-              <div><strong>£25</strong><span>for 3 pairs</span></div>
+              <div><strong>£10</strong><span><s>£14.99</s> · Save 33%</span></div>
+              <div><strong>£25</strong><span><s>£34.99</s> · Save 29%</span></div>
               <div><strong>★★★★★</strong><span>Built for Athletes</span></div>
             </motion.div>
           </motion.div>
@@ -108,8 +108,8 @@ export default function HomePage() {
             <h2>Your game,<br />more <em>secure.</em></h2>
             <p>Less slipping. Less distraction. More confidence in every burst, stop, and change of direction.</p>
             <div className="offer-cards">
-              <Link to="/product/1" className="offer-card"><span>01</span><div><strong>One pair</strong><small>Your everyday essential</small></div><b>£10</b></Link>
-              <Link to="/product/2" className="offer-card offer-card--highlight"><span>03</span><div><strong>Three pairs</strong><small>Better value, more game days</small></div><b>£25</b></Link>
+              <Link to="/product/1" className="offer-card"><span>01</span><div><strong>One pair</strong><small><s>£14.99</s> · Save £4.99</small></div><b>£10</b></Link>
+              <Link to="/product/2" className="offer-card offer-card--highlight"><span>03</span><div><strong>Three pairs</strong><small><s>£34.99</s> · Save £9.99</small></div><b>£25</b></Link>
             </div>
             <Link to="/shop" className="text-link text-link--dark">Choose your pack <span>→</span></Link>
           </motion.div>
@@ -214,7 +214,7 @@ export default function HomePage() {
         <motion.div className="landing-shell landing-cta-content" variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <p className="eyebrow"><span /> Ready when you are</p>
           <h2>Step into your<br /><em>best game.</em></h2>
-          <p>£10 per pair, or 3 pairs for £25.</p>
+          <p>Save 33% on one pair, or 29% on the three-pair pack.</p>
           <Link to="/shop" className="landing-button landing-button--light">Shop FLEX Grip Socks <span>↗</span></Link>
         </motion.div>
       </section>

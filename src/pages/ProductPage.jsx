@@ -12,6 +12,9 @@ export default function ProductPage() {
     id: id,
     name: `FLEX Grip Sock ${id}`,
     price: 10,
+    originalPrice: 14.99,
+    saving: 4.99,
+    discount: 33,
     offers: [{ id: "single", label: "1 pair", price: 10 }],
     rating: 4.8,
     reviews: 142,
@@ -99,7 +102,11 @@ export default function ProductPage() {
               <span className="reviews">({product.reviews} reviews)</span>
             </div>
             <p className="product-description">{product.description}</p>
-            <p className="product-price">£{selectedOffer.price.toFixed(2)}</p>
+            <div className="product-price product-price--sale">
+              <span className="product-price__was">£{product.originalPrice.toFixed(2)}</span>
+              <strong>£{selectedOffer.price.toFixed(2)}</strong>
+              <span className="product-price__discount">Save £{product.saving.toFixed(2)} ({product.discount}% off)</span>
+            </div>
 
             {/* Options */}
             <div className="product-options">

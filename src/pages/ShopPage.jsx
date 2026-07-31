@@ -29,7 +29,7 @@ export default function ShopPage() {
           animate="visible"
         >
           <h1>Shop FLEX Grip Socks</h1>
-          <p>FLEX Grip Socks — £10 per pair or 3 pairs for £25</p>
+          <p>Performance grip, now at special launch prices.</p>
         </motion.div>
 
         <div className="shop-container">
@@ -62,13 +62,19 @@ export default function ShopPage() {
                     </motion.div>
                   </Link>
                   <div className="product-info">
+                    <span className="sale-badge">{product.discount}% off</span>
                     <h3>{product.name}</h3>
                     <div className="product-rating">
                       <span className="stars">★★★★★</span>
                       <span className="rating-num">{product.rating.toFixed(1)}</span>
                       <span className="reviews">({product.reviews})</span>
                     </div>
-                    <p className="product-price">{product.priceLabel}</p>
+                    <div className="product-price" aria-label={`Now £${product.price.toFixed(2)}, was £${product.originalPrice.toFixed(2)}`}>
+                      <span className="product-price__was">£{product.originalPrice.toFixed(2)}</span>
+                      <strong>£{product.price.toFixed(2)}</strong>
+                      <span className="product-price__detail">{product.id === 1 ? 'per pair' : 'for 3 pairs'}</span>
+                    </div>
+                    <p className="product-saving">Save £{product.saving.toFixed(2)}</p>
                     <motion.div
                       whileHover={{ x: 5 }}
                       transition={{ duration: 0.2 }}
