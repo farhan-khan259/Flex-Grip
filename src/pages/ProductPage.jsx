@@ -21,13 +21,13 @@ export default function ProductPage() {
     description:
       "Premium athletic sock engineered for maximum performance and comfort.",
     details: "Features our proprietary grip technology for enhanced traction.",
-    sizes: ["M", "L"],
+    sizes: ["Medium/Large (UK 7–11)"],
     colors: ["white"],
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1F883272-DD6A-47C3-B64E-660869CF5308-sdf5hyQPM8pNQCJFnjauTKwgkJ9bnM.jpeg",
   };
   const [selectedOfferId, setSelectedOfferId] = useState(product.offers[0].id);
-  const [selectedSize, setSelectedSize] = useState("M");
+  const [selectedSize, setSelectedSize] = useState("Medium/Large (UK 7–11)");
   const [selectedColor, setSelectedColor] = useState("white");
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();

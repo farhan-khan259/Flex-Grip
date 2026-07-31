@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import new1 from '../images/new1.png'
 import new2 from '../images/new2.png'
 import new3 from '../images/new3.png'
-import new4 from '../images/new4.jpeg'
-import new5 from '../images/new5.png'
-import new6 from '../images/new6.jpeg'
-import new7 from '../images/new7.jpeg'
+import new4 from '../images/updated3.jpeg'
+import new5 from '../images/updated13.jpeg'
+import new6 from '../images/1F883272-DD6A-47C3-B64E-660869CF5308.jpeg'
+import new7 from '../images/updated14.jpeg'
 import './AboutPage.css'
 
 const reveal = {
@@ -18,7 +18,7 @@ const productBenefits = [
   ['01', 'Advanced grip technology', 'Optimal traction and stability when every change of direction matters.'],
   ['02', 'Breathable, durable materials', 'Long-lasting comfort designed for hard sessions and repeat wear.'],
   ['03', 'Ergonomic athletic fit', 'A close, supportive fit shaped around natural athletic movement.'],
-  ['04', 'Built for every sport', 'Performance support for football, rugby, basketball, and gym training.']
+  ['04', 'Built for every sport', 'Performance support for every athlete, every sport, and every training session.']
 ]
 
 const businessChannels = [
@@ -43,9 +43,9 @@ export default function AboutPage() {
         <img src={new7} alt="Athletes competing on the pitch" />
         <div className="about-hero__overlay" />
         <motion.div className="about-shell about-hero__content" initial="hidden" animate="visible" variants={reveal}>
-          <p className="about-eyebrow"><span /> FLEX Premium</p>
+          <p className="about-eyebrow"><span /> FLEX Official</p>
           <h1>Performance for<br /><em>every athlete.</em></h1>
-          <p>FLEX Premium is a performance-driven fitness apparel brand built for athletes across every sport. Our mission is simple: create essential gear that helps serious competitors move with confidence.</p>
+          <p>FLEX Official is a performance-driven fitness apparel brand built for athletes across every sport. Our mission is simple: create essential gear that helps serious competitors move with confidence.</p>
           <div className="about-hero__actions">
             <Link to="/shop" className="about-button about-button--accent">Shop Elite Grip Socks <span>↗</span></Link>
             <a href="#partnership" className="about-link">Partner with FLEX <span>↓</span></a>
@@ -60,7 +60,7 @@ export default function AboutPage() {
             <h2>Made to meet<br />the <em>moment.</em></h2>
           </motion.div>
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-            <p>Our flagship product, Elite Grip Socks, combines superior traction, comfort, and style to meet the demands of serious competitors. We are building FLEX Premium into a trusted performance brand through thoughtful product development, direct customer relationships, and strategic partnerships.</p>
+            <p>Our flagship product, Elite Grip Socks, combines superior traction, comfort, and style to meet the demands of serious competitors. We are building FLEX Official into a trusted performance brand through thoughtful product development, direct customer relationships, and strategic partnerships.</p>
             <p>From grassroots athletes to elite levels, FLEX is designed to be the performance accessory athletes reach for first.</p>
           </motion.div>
         </div>
@@ -89,7 +89,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-market">
+      {/* <section className="about-market">
         <div className="about-shell about-market__heading">
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <p className="about-eyebrow about-eyebrow--dark"><span /> Opportunity</p>
@@ -118,7 +118,7 @@ export default function AboutPage() {
             </article>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="about-vision">
         <div className="about-shell about-vision__layout">
@@ -134,7 +134,7 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
+{/* 
       <section className="about-partnership" id="partnership">
         <div className="about-shell about-partnership__layout">
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -160,7 +160,7 @@ export default function AboutPage() {
             </ul>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }

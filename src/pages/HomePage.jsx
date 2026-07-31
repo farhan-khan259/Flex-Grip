@@ -12,9 +12,9 @@ import teamMoment from '../images/updated1.jpeg'
 import training from '../images/IMG_2807.jpeg'
 import pitchMoment from '../images/IMG_2809.jpeg'
 import closeUp from '../images/new5.png'
-import matchDay from '../images/D81484E4-87C1-4310-8DB6-17B889802C53.jpeg'
+import matchDay from '../images/updated12.jpeg'
 import lockerRoom from '../images/38705B1B-CB8C-499E-933A-B551718EBC70.jpeg'
-import onPitch from '../images/0D21DA47-148B-4939-8CE5-9AF44624C39B.jpeg'
+import onPitch from '../images/updated11.jpeg'
 import './HomePage.css'
 
 const galleryImages = [
@@ -70,7 +70,7 @@ export default function HomePage() {
             <motion.p variants={reveal} className="eyebrow"><span /> Performance grip socks</motion.p>
             <motion.h1 variants={reveal}>Flex your <br /><em>performance.</em></motion.h1>
             <motion.p variants={reveal} className="hero-text">
-              The performance layer between you and your boots. FLEX Grip Socks are made to help you feel stable, comfortable, and ready for the next move.
+              Designed for comfort, control, and confidence in every move. Grip it, own it, and flex it.
             </motion.p>
             <motion.div variants={reveal} className="hero-actions">
               <Link to="/shop" className="landing-button landing-button--accent">Shop grip socks <span>↗</span></Link>
@@ -78,7 +78,7 @@ export default function HomePage() {
             </motion.div>
             <motion.div variants={reveal} className="hero-proof">
               <div><strong>£10</strong><span><s>£14.99</s> · Save 33%</span></div>
-              <div><strong>£25</strong><span><s>£34.99</s> · Save 29%</span></div>
+              <div><strong>£25</strong><span><s>£39.99</s> · Save 38%</span></div>
               <div><strong>★★★★★</strong><span>Built for Athletes</span></div>
             </motion.div>
           </motion.div>
@@ -109,7 +109,7 @@ export default function HomePage() {
             <p>Less slipping. Less distraction. More confidence in every burst, stop, and change of direction.</p>
             <div className="offer-cards">
               <Link to="/product/1" className="offer-card"><span>01</span><div><strong>One pair</strong><small><s>£14.99</s> · Save £4.99</small></div><b>£10</b></Link>
-              <Link to="/product/2" className="offer-card offer-card--highlight"><span>03</span><div><strong>Three pairs</strong><small><s>£34.99</s> · Save £9.99</small></div><b>£25</b></Link>
+              <Link to="/product/2" className="offer-card offer-card--highlight"><span>03</span><div><strong>Three pairs</strong><small><s>£39.99</s> · Save £14.99</small></div><b>£25</b></Link>
             </div>
             <Link to="/shop" className="text-link text-link--dark">Choose your pack <span>→</span></Link>
           </motion.div>
@@ -122,14 +122,14 @@ export default function HomePage() {
             <p className="eyebrow"><span /> Designed for the work</p>
             <h2>Small details.<br /><em>Big difference.</em></h2>
           </motion.div>
-          <motion.p variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="section-intro">Every detail is built to support a secure, comfortable feel from your first warm-up to the final whistle.</motion.p>
+          <motion.p variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="section-intro">Every detail is designed to deliver a secure, comfortable feel - whatever your sport, from warm-up to the final move.</motion.p>
         </div>
         <div className="landing-shell feature-grid">
           {[
-            ['01', 'Compressive fabric', 'Targeted compression through the upper and lower sock creates a snug fit while supporting circulation and ankle stability.'],
-            ['02', 'Thickened sole', 'Extra cushioning underfoot improves comfort and softness, helping reduce strain during long-distance running and training.'],
-            ['03', 'Breathable material', 'Breathable knit across the front of the sock helps reduce sweat, keeping every step cooler and more comfortable.'],
-            ['04', 'Rubber pads', 'Grippy rubber pads reduce movement inside your footwear to help prevent blisters, improve stability, and lower injury risk.'],
+            ['01', 'Compressive Fabric', 'Targeted compression through the upper and lower sock creates a snug fit while supporting circulation and ankle stability.'],
+            ['02', 'Thickened Sole', 'Extra cushioning underfoot improves comfort and softness, helping reduce strain during long-distance running and training.'],
+            ['03', 'Breathable Material', 'Breathable knit across the front of the sock helps reduce sweat, keeping every step cooler and more comfortable.'],
+            ['04', 'Rubber Pads', 'Grippy rubber pads reduce movement inside your footwear to help prevent blisters, improve stability, and lower injury risk.'],
           ].map(([number, title, description]) => (
             <motion.article key={number} className="feature-card" variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} whileHover={{ y: -6 }}>
               <span>{number}</span><h3>{title}</h3><p>{description}</p><i>↗</i>
@@ -141,7 +141,7 @@ export default function HomePage() {
       <section className="gallery-section">
         <div className="landing-shell gallery-heading">
           <div><p className="eyebrow eyebrow--dark"><span /> On and off the pitch</p><h2>The FLEX<br /><em>field notes.</em></h2></div>
-          <p>From training ground to game day, made for the moments you have to make count.</p>
+          <p>From training to competition, built for every athlete and every moment that matters.</p>
         </div>
       <div className="landing-shell visual-gallery">
   {galleryImages.slice(0, 5).map((item, index) => (
@@ -168,7 +168,7 @@ export default function HomePage() {
         <div className="landing-shell quote-layout">
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <span className="quote-mark">“</span>
-            <blockquote>Comfort you forget about. Grip you can feel when it matters.</blockquote>
+            <blockquote>Where premium comfort meets reliable grip, so you can perform with confidence.</blockquote>
             <p>FLEX GRIP SOCKS <b>—</b> MADE FOR MOVEMENT</p>
           </motion.div>
           <motion.img src={onPitch} alt="FLEX athlete on the pitch" initial={{ opacity: 0, x: 25 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} />
@@ -182,7 +182,7 @@ export default function HomePage() {
             <h2>Trusted by those<br />who <em>perform.</em></h2>
           </motion.div>
           <motion.p variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            Built for the demands of training, match day, and every journey in between.
+            Chosen by professionals. Built for performance at the highest level.
           </motion.p>
         </div>
         <div className="landing-shell reviews-grid">
@@ -214,7 +214,7 @@ export default function HomePage() {
         <motion.div className="landing-shell landing-cta-content" variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <p className="eyebrow"><span /> Ready when you are</p>
           <h2>Step into your<br /><em>best game.</em></h2>
-          <p>Save 33% on one pair, or 29% on the three-pair pack.</p>
+          <p>Save 33% on one pair, or 38% on the three-pair pack.</p>
           <Link to="/shop" className="landing-button landing-button--light">Shop FLEX Grip Socks <span>↗</span></Link>
         </motion.div>
       </section>

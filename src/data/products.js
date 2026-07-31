@@ -18,7 +18,7 @@ export const products = [
     category: 'grip-socks',
     description: 'Premium grip socks designed for reliable traction, comfort, and athletic performance.',
     colors: ['white'],
-    sizes: ['M', 'L'],
+    sizes: ['Medium/Large (UK 7–11)'],
     rating: 4.8,
     reviews: 342
   },
@@ -26,9 +26,9 @@ export const products = [
     id: 2,
     name: 'FLEX Grip Socks — 3 Pair Pack',
     price: 25,
-    originalPrice: 34.99,
-    saving: 9.99,
-    discount: 29,
+    originalPrice: 39.99,
+    saving: 14.99,
+    discount: 38,
     priceLabel: '3 pairs for £25',
     checkoutUrl: 'https://buy.stripe.com/bJe00idNR8ouewI2sr67S01',
     offers: [{ id: 'three-pack', label: '3 pairs', price: 25 }],
@@ -36,7 +36,7 @@ export const products = [
     category: 'grip-socks',
     description: 'Three pairs of premium grip socks for reliable traction, comfort, and more game days.',
     colors: ['white'],
-    sizes: ['M', 'L'],
+    sizes: ['Medium/Large (UK 7–11)'],
     rating: 4.8,
     reviews: 342
   }

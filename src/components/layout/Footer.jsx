@@ -12,7 +12,7 @@ export default function Footer() {
             {/* Brand Column */}
             <div className="footer-section">
               <div className="footer-brand">
-                <span className="footer-logo">FLEX Grip</span>
+                <span className="footer-logo">FLEX Official</span>
                 <p>Premium athletic socks engineered for performance and comfort.</p>
               </div>
               <address className="footer-contact">

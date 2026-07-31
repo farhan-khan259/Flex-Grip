@@ -68,7 +68,7 @@ export default function Header() {
                 Shop
               </NavLink>
               <NavLink to="/about" onClick={() => setMobileMenuOpen(false)}>
-                Our story
+                Our Story
               </NavLink>
               <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>
                 Contact
