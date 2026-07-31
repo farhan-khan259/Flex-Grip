@@ -15,6 +15,9 @@ import closeUp from '../images/new5.png'
 import matchDay from '../images/updated12.jpeg'
 import lockerRoom from '../images/38705B1B-CB8C-499E-933A-B551718EBC70.jpeg'
 import onPitch from '../images/updated11.jpeg'
+import newImage1 from '../images/newimage1.jpeg'
+import newImage2 from '../images/newimage2.jpeg'
+import newImage3 from '../images/newimage3.jpeg'
 import './HomePage.css'
 
 const galleryImages = [
@@ -23,6 +26,9 @@ const galleryImages = [
   { image: playerRun, alt: 'Player moving across the pitch', label: 'Every turn' },
   { image: closeUp, alt: 'Close-up of football socks in use', label: 'Grip under pressure' },
   { image: playerDetail, alt: 'Football match detail', label: 'Game ready' },
+  { image: newImage1, alt: 'FLEX gallery image one' },
+  { image: newImage2, alt: 'FLEX gallery image two' },
+  { image: newImage3, alt: 'FLEX gallery image three' },
   { image: gameDetail, alt: 'Action from a football game', label: 'Traction matters' },
   { image: teamMoment, alt: 'Team moment on the field', label: 'Trusted by players' },
   { image: training, alt: 'Athlete training', label: 'Train harder' },
@@ -144,9 +150,9 @@ export default function HomePage() {
           <p>From training to competition, built for every athlete and every moment that matters.</p>
         </div>
       <div className="landing-shell visual-gallery">
-  {galleryImages.slice(0, 5).map((item, index) => (
+  {galleryImages.slice(0, 8).map((item, index) => (
     <motion.figure
-      key={item.image}
+      key={`${item.image}-${index}`}
       className={`gallery-item gallery-item--${index + 1}`}
       initial={{ opacity: 0, scale: 0.96 }}
       whileInView={{ opacity: 1, scale: 1 }}
@@ -158,7 +164,6 @@ export default function HomePage() {
       whileHover={{ y: -5 }}
     >
       <img src={item.image} alt={item.alt} loading="lazy" />
-      <figcaption>{item.label}</figcaption>
     </motion.figure>
   ))}
 </div>
